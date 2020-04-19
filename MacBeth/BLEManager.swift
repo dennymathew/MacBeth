@@ -12,6 +12,10 @@ import CoreBluetooth
 // MARK: - Proximity manager
 final class BLEManager: NSObject {
     static let shared = BLEManager()
+    /// Configured models
+    var peripheralModel: PeripheralModel?
+    
+    
     private var peripheralManager: CBPeripheralManager?
     /// Computed private properties
     private var serviceUUID: CBUUID {
@@ -27,7 +31,8 @@ final class BLEManager: NSObject {
     private override init() {
         super.init()
     }
-    func start() {
+    func startAdvertising(_ model: PeripheralModel) {
+        self.peripheralModel = model
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: [:])
         print("******** Initialized peripheral! ********")
         startAdvertising()
@@ -37,18 +42,16 @@ final class BLEManager: NSObject {
 extension BLEManager {
     
     /// Start advertising data
-    func startAdvertising() {
-        if peripheralManager?.state != .poweredOn {
+    private func startAdvertising() {
+        guard peripheralManager?.state == .poweredOn, let model = peripheralModel else {
             return
         }
-        let data = "Value".data(using: .utf8)
-        let service = CBMutableService(type: serviceUUID, primary: true)
-        let characteristics = CBMutableCharacteristic(type: characteristicUUID, properties: [.read], value: data, permissions: [.readable])
-        service.characteristics = [characteristics]
-        peripheralManager?.add(service)
-        peripheralManager?.startAdvertising(advertisementData)
-        print("******** Advertising: \(advertisementData)! ********")
-        print("******** Characteristics: \(characteristics)! ********")
+        for service in model.cbServices {
+            peripheralManager?.add(service)
+        }
+        peripheralManager?.startAdvertising(model.advertisementData)
+        print("******** Advertising: \(model.advertisementData)! ********")
+        print("******** Characteristics: \(model.services.first?.characteristics ?? [])! ********")
     }
     
     /// Stop advertising data

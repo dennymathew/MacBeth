@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B0C66C94244ACC65003F117F /* BLEConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66C93244ACC65003F117F /* BLEConstants.swift */; };
 		B0C66C97244ADCAA003F117F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C66C96244ADCAA003F117F /* CoreBluetooth.framework */; };
+		B0C66C9A244AF07C003F117F /* PeripheralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66C99244AF07C003F117F /* PeripheralModel.swift */; };
 		B0F976C0244AC53C00F873B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F976BF244AC53C00F873B6 /* AppDelegate.swift */; };
 		B0F976C2244AC53C00F873B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F976C1244AC53C00F873B6 /* ViewController.swift */; };
 		B0F976C4244AC53F00F873B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F976C3244AC53F00F873B6 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		B0C66C93244ACC65003F117F /* BLEConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConstants.swift; sourceTree = "<group>"; };
 		B0C66C96244ADCAA003F117F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		B0C66C98244ADCFB003F117F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0C66C99244AF07C003F117F /* PeripheralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralModel.swift; sourceTree = "<group>"; };
 		B0F976BC244AC53C00F873B6 /* MacBeth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacBeth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F976BF244AC53C00F873B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0F976C1244AC53C00F873B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				B0F976C1244AC53C00F873B6 /* ViewController.swift */,
 				B0F976CF244AC7A600F873B6 /* BLEManager.swift */,
 				B0C66C93244ACC65003F117F /* BLEConstants.swift */,
+				B0C66C99244AF07C003F117F /* PeripheralModel.swift */,
 				B0F976C3244AC53F00F873B6 /* Assets.xcassets */,
 				B0F976C5244AC53F00F873B6 /* Main.storyboard */,
 				B0F976C9244AC53F00F873B6 /* MacBeth.entitlements */,
@@ -153,6 +156,7 @@
 			files = (
 				B0F976C2244AC53C00F873B6 /* ViewController.swift in Sources */,
 				B0C66C94244ACC65003F117F /* BLEConstants.swift in Sources */,
+				B0C66C9A244AF07C003F117F /* PeripheralModel.swift in Sources */,
 				B0F976D0244AC7A600F873B6 /* BLEManager.swift in Sources */,
 				B0F976C0244AC53C00F873B6 /* AppDelegate.swift in Sources */,
 			);
